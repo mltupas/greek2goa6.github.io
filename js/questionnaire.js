@@ -2,25 +2,28 @@
  * Questionnaire.js
  */
 
+/* VAR AND FUNCTION FOR FRATERNITY AND SORORITY BUTTONS */
+var greekOrganization = "";
+
+$('.org-btn').on('click',function() {
+    // get the button that was clicked
+    var buttonClicked = $(this).html();
+    console.log(buttonClicked);
+
+    // store it in greekOrganization
+    greekOrganization = buttonClicked;
+    console.log(greekOrganization);
+
+});
+
+
+
 /* ALLSTON: EDITS START HERE */
 
 /* FUNCTIONS TO HELP WITH SAVING QUESTIONNAIRE VALUES */
 
 // FUNCTION TO UPDATE ACADEMICS VALUE
 var academics_value = 0;
-
-// LOCAL VARIABLE TO DISPLAY TOP CURRENT ATTRIBUTE VALUE
-var academics_number = $('#academics-number'), container_1;
-
-// CREATE CONTAINER IN HTML
-container_1 = $('<span id="current-number_1" class="container"></span>');
-
-// APPEND CONTAINER TO ACADEMICS_NUMBER, WHICH DEALS WITH THE 'ACADEMICS-NUMBER' ID
-academics_number.append(container_1);
-
-// APPEND CURRENT VALUE TO CONTAINER TO BE DISPLAYED ON QUESTIONNAIRE PAGE
-container_1.append('<span id="val_1">' + "Current Academics Value: " + academics_value +'</span>');
-
 $('.academics-number-button').on('click',function() {
     // get the button that was clicked
     var buttonClicked = $(this).html();
@@ -29,134 +32,54 @@ $('.academics-number-button').on('click',function() {
     academics_value = buttonClicked;
     console.log("Academics: " + academics_value);
 
-    // update value
-    document.getElementById("val_1").textContent="Current Academics Value: " + academics_value;
-
-    didChooseAllValues();
 });
-
-
 
 // FUNCTION TO UPDATE ATHLETICS VALUE
 var athletics_value = 0;
-
-// LOCAL VARIABLE TO DISPLAY TOP CURRENT ATTRIBUTE VALUE
-var athletics_number = $('#athletics-number'), container_2;
-
-// CREATE CONTAINER IN HTML
-container_2 = $('<span id="current-number_2" class="container"></span>');
-
-// APPEND CONTAINER TO ATHLETICS_NUMBER, WHICH DEALS WITH THE 'ATHLETICS-NUMBER' ID
-athletics_number.append(container_2);
-
-// APPEND CURRENT VALUE TO CONTAINER TO BE DISPLAYED ON QUESTIONNAIRE PAGE
-container_2.append('<span id="val_2">' + "Current Athletics Value: " + athletics_value +'</span>');
-
 $('.athletics-number-button').on('click',function() {
     // get the button that was clicked
     var buttonClicked = $(this).html();
-    
+
     // store button value into athletics_value
     athletics_value = buttonClicked;
     console.log("Athletics: " + athletics_value);
 
-    // update value
-    document.getElementById("val_2").textContent="Current Athletics Value: " + athletics_value;
-
-    didChooseAllValues();
 });
-
-
 
 // FUNCTION TO UPDATE LEADERSHIP VALUE
 var leadership_value = 0;
-
-// LOCAL VARIABLE TO DISPLAY TOP CURRENT ATTRIBUTE VALUE
-var leadership_number = $('#leadership-number'), container_3;
-
-// CREATE CONTAINER IN HTML
-container_3 = $('<span id="current-number_3" class="container"></span>');
-
-// APPEND CONTAINER TO LEADERSHIP_NUMBER, WHICH DEALS WITH THE 'LEADERSHIP-NUMBER' ID
-leadership_number.append(container_3);
-
-// APPEND CURRENT VALUE TO CONTAINER TO BE DISPLAYED ON QUESTIONNAIRE PAGE
-container_3.append('<span id="val_3">' + "Current Leadership Value: " + leadership_value +'</span>');
-
 $('.leadership-number-button').on('click',function() {
     // get the button that was clicked
     var buttonClicked = $(this).html();
-    
+
     // store button value into leadership_value
     leadership_value = buttonClicked;
     console.log("Leadership: " + leadership_value);
 
-    // update value
-    document.getElementById("val_3").textContent="Current Leadership Value: " + leadership_value;
-
-    didChooseAllValues();
 });
-
-
 
 // FUNCTION TO UPDATE SOCIAL VALUE
 var social_value = 0;
-
-// LOCAL VARIABLE TO DISPLAY TOP CURRENT ATTRIBUTE VALUE
-var social_number = $('#social-number'), container_4;
-
-// CREATE CONTAINER IN HTML
-container_4 = $('<span id="current-number_4" class="container"></span>');
-
-// APPEND CONTAINER TO SOCIAL_NUMBER, WHICH DEALS WITH THE 'SOCIAL-NUMBER' ID
-social_number.append(container_4);
-
-// APPEND CURRENT VALUE TO CONTAINER TO BE DISPLAYED ON QUESTIONNAIRE PAGE
-container_4.append('<span id="val_4">' + "Current Social Value: " + social_value +'</span>');
-
 $('.social-number-button').on('click',function() {
     // get the button that was clicked
     var buttonClicked = $(this).html();
-    
+
     // store button value into social_value
     social_value = buttonClicked;
     console.log("Social: " + social_value);
 
-    // update value
-    document.getElementById("val_4").textContent="Current Social Value: " + social_value;
-
-    didChooseAllValues();    
 });
-
-
 
 // FUNCTION TO UPDATE PHILANTHROPY VALUE
 var philanthropy_value = 0;
-
-// LOCAL VARIABLE TO DISPLAY TOP CURRENT ATTRIBUTE VALUE
-var philanthropy_number = $('#philanthropy-number'), container_5;
-
-// CREATE CONTAINER IN HTML
-container_5 = $('<span id="current-number_5" class="container"></span>');
-
-// APPEND CONTAINER TO PHILANTRHOPY_NUMBER, WHICH DEALS WITH THE 'PHILANTHROPY-NUMBER' ID
-philanthropy_number.append(container_5);
-
-// APPEND CURRENT VALUE TO CONTAINER TO BE DISPLAYED ON QUESTIONNAIRE PAGE
-container_5.append('<span id="val_5">' + "Current Philanthropy Value: " + philanthropy_value +'</span>');
-
 $('.philanthropy-number-button').on('click',function() {
     // get the button that was clicked
     var buttonClicked = $(this).html();
-    
+
     // store button value into philanthropy_value
     philanthropy_value = buttonClicked;
     console.log("Philanthropy: " + philanthropy_value);
 
-    // update value
-    document.getElementById("val_5").textContent="Current Philanthropy Value: " + philanthropy_value;
-
-    didChooseAllValues();
 });
 
 
@@ -308,7 +231,7 @@ var sigma_phi_epsilon = {
 };
 var sigma_phi_epsilon_values = [1, 2, 1, 4, 2];
 
-//TAU KAPPA EPSILON
+//PI KAPPA ALPHA
 var tau_kappa_epsilon = {
     name: "Tau Kappa Epsilon",
     academics_value: 1,
@@ -319,7 +242,7 @@ var tau_kappa_epsilon = {
 };
 var tau_kappa_epsilon_values = [1, 1, 2, 1, 5];
 
-//TRIANGLE
+//PI KAPPA ALPHA
 var triangle = {
     name: "Triangle",
     academics_value: 4,
@@ -449,24 +372,6 @@ function sortFrats() {
 
 
 
-// FUNCTION TO CHECK IF ANY ATTRIBUTE VALUE IS ZERO
-function didChooseAllValues() {
-
-    var empty = false;
-    if (academics_value == 0 || athletics_value == 0 || leadership_value == 0 || social_value == 0 || philanthropy_value == 0) {
-        empty = true;
-    }
-
-    if (empty) {
-        $('.submitbtn').attr('disabled', 'disabled');
-    } else {
-        $('.submitbtn').removeAttr('disabled');
-    }
-
-    console.log("Did I forget to pick a value for at least one attribute? " + empty);
-}
-
-
 /* MATCHES PAGE JS */
 // LOCAL VARIABLE TO DISPLAY TOP 3 FRATS AND HANDLE MAGIC NUMBER
 var org_name_1 = $('#temp'), container;
@@ -491,16 +396,19 @@ for (var index = 0; index < top_3; index++) {
 // LOCAL VARIABLE TO DISPLAY ALL FRATS AND HANDLE MAGIC NUMBER
 var org_name_2 = $('#explore'), container;
 
-// LOOP TO DISPLAY ALL FRATS
+// LOOP TO DISPLAY TOP 3 FRATS
 for (var index = 0; index < frats.length; index++) {
     // CREATE CONTAINER IN HTML
     container = $('<div id="frat_2" class="container"></div>');
 
-    // APPEND CONTAINER TO ORG_NAME_2, WHICH DEALS WITH THE 'EXPLORE' ID
+    // APPEND CONTAINER TO ORG_NAME_1, WHICH DEALS WITH THE 'TEMP' ID
     org_name_2.append(container);
 
-    // APPEND FRAT NAME AND MATCH PERCENTAGE TO CONTAINER TO BE DISPLAYED ON EXPLORE PAGE
+    // APPEND FRAT NAME AND MATCH PERCENTAGE TO CONTAINER TO BE DISPLAYED ON MATCHES PAGE
     container.append('<div class="name">' + frats_to_values[index][0] +'</div>');
     container.append('<div class="match_percentage">' + "Match Percentage: " + frats_to_values[index][1] + "%" + '</div>');
+    // MARK: NEED TO ADD "HOMEPAGE" PROPERTY TO ENABLE APPEND
+    //container.append('<a href="' + frats_to_values[index][2] + '">' + "Visit Fraternity Page" + '</a>');
+
 }
 /* ALLSTON: EDITS END HERE */

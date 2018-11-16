@@ -2,11 +2,11 @@
 
 <html>
   <head>
-  	<title>Questionnaire</title>
+  	<title>Questionnaire</title>	
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link href="css/introHCI.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
   </head>
 
   <body>
@@ -34,85 +34,64 @@
 
 
       <hr>
-      <!-- ALLSTON: EDITS START HERE -->
+      <!-- ALLSTON: EDITS START HERE -->      
       <form action="matches.html" style="border:1px solid #ccc">
 
-        <h2>How important are the following attributes to you?</h2>
-        <h3>Scale: 1 = Not at all, 2 = Very little, 3 = Somewhat, 4 = Very much, 5 = Completely</h3>
+        <p>How important are the following attributes to you?</p>
+        <p>Scale: 1 = not at all, 2 = very little, 3 = somewhat, 4 = very much, 5 = completely</p>
 
-        <div class="attribute">
-          <!-- Raul: I added boldfont & underlines for the attribute names-->
-          <span style="color:black;font-weight:bold"><u>Academics:</u></span>
+        <div class="attribute-academics">
+          <span>Academics:</span>
           <span>Grades, Homework</span>
           <button type="button" class="academics-number-button">1</button>
           <button type="button" class="academics-number-button">2</button>
           <button type="button" class="academics-number-button">3</button>
           <button type="button" class="academics-number-button">4</button>
           <button type="button" class="academics-number-button">5</button>
-
-          <div id="academics-number">
-
-          </div>
         </div>
 
-        <div class="attribute">
-          <span style="color:black;font-weight:bold"><u>Athletics:</u></span>
+        <div class="attribute-athletics">
+          <span>Athletics:</span>
           <span>Sports, Exercise</span>
           <button type="button" class="athletics-number-button">1</button>
           <button type="button" class="athletics-number-button">2</button>
           <button type="button" class="athletics-number-button">3</button>
           <button type="button" class="athletics-number-button">4</button>
           <button type="button" class="athletics-number-button">5</button>
-
-          <div id="athletics-number">
-
-          </div>
         </div>
 
-        <div class="attribute">
-          <span style="color:black;font-weight:bold"><u>Leadership:</u></span>
+        <div class="attribute-leadership">
+          <span>Leadership:</span>
           <span>Communication, Guidance</span>
           <button type="button" class="leadership-number-button">1</button>
           <button type="button" class="leadership-number-button">2</button>
           <button type="button" class="leadership-number-button">3</button>
           <button type="button" class="leadership-number-button">4</button>
           <button type="button" class="leadership-number-button">5</button>
-
-          <div id="leadership-number">
-
-          </div>
         </div>
 
-        <div class="attribute">
-          <span style="color:black;font-weight:bold"><u>Social:</u></span>
+        <div class="attribute-social">
+          <span>Social:</span>
           <span>Hangouts, Parties</span>
           <button type="button" class="social-number-button">1</button>
           <button type="button" class="social-number-button">2</button>
           <button type="button" class="social-number-button">3</button>
           <button type="button" class="social-number-button">4</button>
           <button type="button" class="social-number-button">5</button>
-
-          <div id="social-number">
-
-          </div>
         </div>
 
-        <div class="attribute">
-          <span style="color:black;font-weight:bold"><u>Philanthropy:</u></span>
+        <div class="attribute-philanthropy">
+          <span>Philanthropy:</span>
           <span>Volunteer, Charity</span>
           <button type="button" class="philanthropy-number-button">1</button>
           <button type="button" class="philanthropy-number-button">2</button>
           <button type="button" class="philanthropy-number-button">3</button>
           <button type="button" class="philanthropy-number-button">4</button>
           <button type="button" class="philanthropy-number-button">5</button>
-
-          <div id="philanthropy-number">
-
-          </div>
         </div>
 
         <div class="submit-button">
-          <button type="submit" class="submitbtn" onclick="findTopThreeFrats()" disabled="disabled">Submit</button>
+          <button type="submit" class="submitbtn" onclick="findTopThreeFrats()">Submit</button>
         </div>
       </form>
       <!-- ALLSTON: EDITS END HERE -->

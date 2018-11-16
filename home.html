@@ -45,7 +45,7 @@
           <button type="button" class="signin-btn">Organization</button>
         </div>
  -->
-	<form action="events.html">
+	<form name="login" onsubmit="return validate()" action="events.html" method="post">
 
 <!--    <p>Are you signing in as a Student or Organization?</p>
 
@@ -60,16 +60,16 @@
 
 		<button type="submit">Login</button>
 
+<!-- NOTE: Deleted org sign-ups (Mark) -->
 	<div class="links">
 		    <a href="index.html" id="createstudentacc">Create Student Account</a>
-<!-- 		    <a href="org_sign_up.html" id="createorgacc">Create Org Account</a>
- -->		<a href="forgot_password.html" id="forgotpassword">Forgot Password?</a>
+		<a href="forgot_password.html" id="forgotpassword">Forgot Password?</a>
 		</div>
 		</div>
 	</form>
 
     <script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/login.js"></script>
+		<script src="js/login.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/questionnaire.js"></script>
     <script src="js/greek2go.js"></script>

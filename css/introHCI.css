@@ -7,10 +7,7 @@
 
 /* BODY CSS */
 body {
-		 background-image:  url("../images/geisellib.png");
-		 background-repeat: no-repeat;
-		 background-size: 100% 100%;
-     padding: 225px;
+     padding: 20px;
      text-align: center;
 }
 
@@ -68,21 +65,20 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* HR CSS */
 hr {
-  border: 3px solid #000000;
-  margin-bottom: 0px;
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
 }
 
 /* Set a style for all buttons */
 button {
-  background-color: #005e93;
-  width: inherit;
-  color: #ffbe00;
+  background-color: #000000;
+  width: 10%;
+  color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   opacity: 0.9;
-	font-weight: bold;
 }
 
 /* BUTTON HOVER CSS */
@@ -103,15 +99,8 @@ button:hover {
 }
 
 /* Add padding to container elements */
-/* Raul Change: I added a white background to distinguish things a bit better */
 .container {
-	background-color: white;
-  padding: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-	border-style: groove;
-	border-color: black;
-  border-width: 2px;
+  padding: 16px;
 }
 
 /* Clear floats */
@@ -180,56 +169,23 @@ i {
 }
 
 /* QUESTIONNAIRE NUMBER BUTTON CSS */
-.academics-number-button {
-  background-color: #005e93;
-  width: 7%;
+.number-button {
+  background-color: #000000;
+  width: 10%;
 }
-
-.athletics-number-button {
-  background-color: #005e93;
-  width: 7%;
-}
-
-.leadership-number-button {
-  background-color: #005e93;
-  width: 7%;
-}
-
-.social-number-button {
-  background-color: #005e93;
-  width: 7%;
-}
-
-.philanthropy-number-button {
-  background-color: #005e93;
-  width: 7%;
-}
-
 
 /* ORGANIZAITON/FRATERNITY BUTTON */
 .org-btn {
-  background-color: #005e93;
+  background-color: #000000;
   width: 10%;
 }
 
 /* SUBMIT BUTTON CSS */
 .submitbtn {
-  background-color: #005e93;
+  background-color: #000000;
   width: 10%;
 }
 
-/* SUBMIT BUTTON DISABLED CSS */
-.submitbtn:disabled,
-.submitbtn[disabled]{
-  background-color: #cccccc;
-  width: 10%;
-}
-
-.attribute .submitbtn:disabled,
-.submitbtn[disabled]{
-  color: black;
-  font-weight: bold;
-}
 
 
 /* MATCHES PAGE CSS */
@@ -243,42 +199,15 @@ i {
 
 /* HOMEPAGE BUTTON CSS */
 .homepage-btn {
-  background-color: #005e93;
+  background-color: #000000;
   width: 10%;
 }
 
 /* RESET PASSWORD BUTTON CSS */
 .reset-password-btn {
-  background-color: #005e93;
+  background-color: #000000;
   width: 10%;
 }
-
-/* Raul Change: this is the styling for for the questionnaire buttons */
-.attribute .academics-number-button {
-	color:#ffbe00;
-	font-weight:bold;
-}
-
-.attribute .athletics-number-button {
-  color:#ffbe00;
-  font-weight:bold;
-}
-
-.attribute .leadership-number-button {
-  color:#ffbe00;
-  font-weight:bold;
-}
-
-.attribute .social-number-button {
-  color:#ffbe00;
-  font-weight:bold;
-}
-
-.attribute .philanthropy-number-button {
-  color:#ffbe00;
-  font-weight:bold;
-}
-
 
 /* SIDEBAR CLASS CSS */
 .sidebar {
@@ -293,7 +222,6 @@ i {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-		text-align: left;
 }
 
 /* SIDEBAR CLASS WITH A ATTRIBUTES CSS */
@@ -350,14 +278,15 @@ i {
 }
 /* this is where the css for the side bar ends */
 
-
-
 /* ORG PAGE CSS */
 table {
   table-layout: fixed;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-	background-color: white;
+}
+
+.event_grid button {
+	width: 100%;
 }
 /* ALLSTON: EDITS END HERE */

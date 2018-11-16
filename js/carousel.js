@@ -13,23 +13,33 @@ function comparator(a, b) {
   return 0;
 }
 
-console.log(sorted_events);
+//MARK: EDITS BEGIN HERE (ADD "IF NO CAROUSEL EVENTS")
+if (carousel_events.length == 0) {
+  container = $('<div id="mySlides" class="carousel_container"></div>');
+  current_events.append(container);
 
+  container.append('<img src="https://roosevelt.ucsd.edu/res-life/ercstudentsatmlk2016crop720x370.jpg" style=width"100%">');
+  container.append('<div class="text">');
+  container.append('<h2>Currently, you have no events. Please add events by going to the Explore page or taking the questionnaire, both of which can be found in Settings</h2>');
+}
+else {
+  for (var index = 0; index < num_user_events; index++) {
+
+      container = $('<div id="mySlides" class="carousel_container"></div>');
+      current_events.append(container);
+
+      container.append('<div class="numbertext">' + (index + 1) + ' / ' + num_user_events + '</div>');
+      container.append('<img src="https://roosevelt.ucsd.edu/res-life/ercstudentsatmlk2016crop720x370.jpg" style=width"100%">');
+      container.append('<div class="text">');
+      container.append('<h1>' + sorted_events[index].title + '</h1');
+      container.append('<h3>' + sorted_events[index].location + '</h3>');
+      container.append('<h3>' + sorted_events[index].date + " from " + carousel_events[index].time + '</h3>');
+      container.append('<h3>' + sorted_events[index].description + '</h3>');
+      container.append('</div>');
+    }
+}
 //APPEND SLIDES TO CAROUSEL CONTAINER
-for (var index = 0; index < num_user_events; index++) {
 
-    container = $('<div id="mySlides" class="carousel_container"></div>');
-    current_events.append(container);
-
-    container.append('<div class="numbertext">' + (index + 1) + ' / ' + num_user_events + '</div>');
-    container.append('<img src="https://roosevelt.ucsd.edu/res-life/ercstudentsatmlk2016crop720x370.jpg" style=width"100%">');
-    container.append('<div class="text">');
-    container.append('<h1>' + sorted_events[index].title + '</h1');
-    container.append('<h3>' + sorted_events[index].location + '</h3>');
-    container.append('<h3>' + sorted_events[index].date + " from " + carousel_events[index].time + '</h3>');
-    container.append('<h3>' + sorted_events[index].description + '</h3>');
-    container.append('</div>');
-  }
 
 //TO ADD DOTS TO CAROUSEL AS EVENTS ARE ADDED - INCOMPLETE
 //   var dots = $('#dots'), container2;
@@ -54,7 +64,7 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("carousel_container");
-  // var dots = document.getElementsByClassName("dot");
+  var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -64,5 +74,7 @@ function showSlides(n) {
   //     dots[i].className = dots[i].className.replace(" active", "");
   // }
   slides[slideIndex-1].style.display = "block";
+
+
   // dots[slideIndex-1].className += " active";
 }

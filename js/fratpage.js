@@ -384,7 +384,6 @@ var carousel_events = JSON.parse(myStorage.getItem("carousel_events")) || [];
 
 function addToCarousel(eventToAdd) {
   var isInArray = false;
-  console.log(carousel_events);
 
 //IF EVENT LIST IS EMPTY, ADD EVENT OBJECT TO ARRAY LIST AND STORE IN LOCALSTORAGE
   if (carousel_events == null) {
@@ -396,12 +395,12 @@ function addToCarousel(eventToAdd) {
 //CHECK EVENT LIST TO SEE IF EVENT HAS ALREADY BEEN ADDED
   else {
     for (index = 0; index < num_events; index++) {
-      if (eventToAdd == carousel_events[index]) {
+      if (eventToAdd.title == carousel_events[index].title) {
         isInArray = true;
       }
     }
   }
-
+  console.log(eventToAdd);
   if (isInArray == true) {
     alert('This event has already been added.');
   }
